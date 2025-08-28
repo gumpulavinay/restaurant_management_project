@@ -1,7 +1,9 @@
 
 from django.shortcuts import render 
-from .models import Restaurant
 
 def homepage(request):
-    restaurant = Restaurant.objects.first()
-    return render (request,'homepage.html, {"phone_number": restaurant.phone}')
+    context = {
+        "restaurant_name": "Foodie Paradise","welcome_message": "welcome to Foodie Paradise! Enjoy our delicious menu and freat service." 
+    }
+    
+    return render (request,'homepage.html',context)
